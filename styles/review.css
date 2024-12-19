@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f3e5f5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  .nav a {
+    margin-right: 1rem;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .nav a.active {
+    text-decoration: underline;
+  }
+  
+  .auth .btn {
+    background: none;
+    border: 2px solid #fff;
+    color: #fff;
+    margin-left: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  .main {
+    margin-top: 50px;
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+  }
+  
+  .rating, .reviews {
+    background: #e1bee7;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+  }
+  
+  .rating-score {
+    display: flex;
+    align-items: center;
+  }
+  
+  .score {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-right: 1rem;
+  }
+  
+  .stars {
+    font-size: 1.5rem;
+    color: gold;
+  }
+  
+  .review {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 8px;
+  }
+  
+  .review footer {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .btn {
+    background-color: #6a1b9a;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #4a0072;
+  }
+  
+  h4{
+    color: black;
+  }
+
+  h3{
+    color: black;
+  }
+
+  p{
+    color: black;
+  }
