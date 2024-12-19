@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -158,4 +162,73 @@ nav ul li a {
   text-align: center;
   padding: 20px;
   box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.rating{
+  background: #e1bee7;
+  padding: 18px;
+  font-size: 18px;
+  margin-bottom: 28px;
+  border-radius: 8px;
+}
+
+.rating-score {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+.nilai-rating{
+  font-size: 38px;
+}
+
+.score {
+  font-size: 28px;
+  font-weight: bold;
+  margin-right: 1px;
+}
+
+.stars {
+  font-size: 3.5rem;
+  color: gold;
+}
+
+.review {
+  margin-bottom: 1px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.profile-review {
+  width: 20%;
+  height: 20%;
+  border-radius: 90%;
+  padding: 10px;
+  object-fit: cover; /* Agar gambar sesuai dengan lingkaran */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.username-review {
+font-size: 16px;
+font-weight: bold;
+color: #333; /* Warna teks */
+margin-right: 210px;
+}
+
+.stars-review{
+font-size: 25px;
+color: gold;
+margin-right: 300px;
+margin-bottom: 10px;
+display: flex;
+flex-direction: column;
 }

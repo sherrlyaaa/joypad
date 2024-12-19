@@ -43,26 +43,54 @@ export default function HomePage() {
 
 
         {/* Bagian Reviews */}
-        <section id="review" className="section review-section">
-          <div className="rating-box">
-            <h2>Rating</h2>
-            <div className="rating-summary">
-              <span className="rating-value">4.5</span>
-              <span className="rating-stars">★★★★★</span>
-              <span className="rating-count">Based on 150 reviews</span>
-            </div>
+      <section id="ratingbox" className="rating">
+        <div className="rating">
+          <h2>Rating</h2>
+          <div className="score">
+            <span className="nilai-rating">4.5</span>
+            <span className="stars">★</span>
+            <span className="rating">Based on 150 reviews</span>
           </div>
-          <div className="review-box">
-            <p>
-              <strong>Fadilahrtk</strong> - Excellent booking experience! The game
-              house reservation platform is easy to use and secure.
-            </p>
-            <p>
-              <strong>Xaviarth</strong> - Highly recommend this gaming venue for
-              anyone seeking fun!
-            </p>
+        </div>
+        <div className="review">
+          <div className="profile-review">
+            <img
+              src="/image/review1.png"
+              alt="foto"
+              className="profile-review"
+            />
+            <span className="username-review">Fadilahrtk</span>
+            <span className="stars-review">★★★★★</span>
           </div>
-        </section>
+          <strong>Excellent booking experience! </strong>
+          <p>
+            This game house reservation platform is very easy to use and
+            responsive. Fast booking process, intuitive interface, and a wide
+            selection of games. The payment system is secure, and customer
+            support is very helpful. I can immediately choose the game room
+            according to my wishes without any hassle.
+          </p>
+        </div>
+
+        <div className="review">
+          <div className="profile-review">
+            <img
+              src="/image/review2.jpg"
+              alt="foto"
+              className="profile-review"
+            />
+            <span className="username-review">Xavierzh</span>
+            <span className="stars-review">★★★★★</span>
+          </div>
+          <strong>Excellent Experience, Highly Recommend!</strong>
+          <p>
+            Highly recommend this place to anyone looking for a fun and
+            hassle-free gaming experience! I had an amazing time at the gaming
+            venue! The setup was flawless, with all the equipment working
+            perfectly, and the atmosphere was vibrant and exciting.
+          </p>
+        </div>
+      </section>
 
         {/* Bagian Footer */}
         <Footer/>
