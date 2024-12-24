@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -125,6 +129,7 @@ nav ul li a {
   cursor: pointer;
 }
 
+
 .find-room-link{
   color: #fff;
 }
@@ -159,3 +164,141 @@ nav ul li a {
   padding: 20px;
   box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.main {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.rating{
+  background: #e1bee7;
+  padding: 18px;
+  font-size: 18px;
+  margin-bottom: 28px;
+  border-radius: 8px;
+}
+
+.rating-score {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+.nilai-rating{
+  font-size: 38px;
+}
+
+.score {
+  font-size: 28px;
+  font-weight: bold;
+  margin-right: 1px;
+}
+
+.stars {
+  font-size: 3.5rem;
+  color: gold;
+}
+
+.review {
+  margin-bottom: 1px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.profile-review {
+  width: 20%;
+  height: 20%;
+  border-radius: 90%;
+  padding: 10px;
+  object-fit: cover; /* Agar gambar sesuai dengan lingkaran */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.username-review {
+font-size: 16px;
+font-weight: bold;
+color: #171717; /* Warna teks */
+margin-right: 210px;
+}
+
+.stars-review{
+font-size: 25px;
+color: gold;
+margin-right: 300px;
+margin-bottom: 10px;
+display: flex;
+flex-direction: column;
+}
+
+.reservation-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.reservation-item {
+  position: relative;
+}
+
+.calendar-container {
+  position: absolute;
+  z-index: 10;
+  width: 350px;
+  height: auto;
+  background-color: #bf86d2;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.time-dropdown-container {
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  gap: 1rem;
+  position: relative;
+}
+
+.time-input label {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.time-dropdown {
+  padding: 10px;
+  width: 100px;
+  border-radius: 10px;
+  border: 1px solid #ededed;
+  font-size: 14px;
+  background-color: #bf86d2;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.time-dropdown:focus {
+  outline: none;
+  border-color: #171717;
+  box-shadow: 0 0 5px rgba(181, 112, 203, 0.5);
+}
+
+.time-dropdown option {
+  padding: 10px;
+  font-size: 14px;
+}
+
+.time-dropdown-container select {
+  appearance: none; /* Hilangkan default dropdown arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23b570cb' d='M2 0L0 2h4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+}
+
