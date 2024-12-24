@@ -8,7 +8,7 @@ const RegularRoom = () => {
         <div>
             <Header/>
             <div>
-            <div className="img">
+            <div className="highlight">
                 <h1>halo</h1>
                 <img src="/image/regular.png" alt="Regular" />
             </div>

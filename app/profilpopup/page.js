@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import "../../../styles/cek.css"
+import "../../styles/cek.css"
 
 const ProfilePopup = () => {
   const [isOpen, setIsOpen] = useState(false);
