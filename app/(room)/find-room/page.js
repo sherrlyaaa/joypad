@@ -25,22 +25,31 @@ const findRoom = () => {
                     </div>
                 </section>
             </div>
-            <div className="rooms">
+            <div className="room-container">
                 <div>
+                    <img src="/image/regularfind.png" alt="regular room"/>
+                    <h3>REGULAR ROOM</h3>
                     <Link href="/regular-room">
-                        <img src="/image/regular.png" alt="regular room"/>
-                        <h1>regular</h1>
-                    </Link>    
+                        <div className="Expand-btn">Expand</div>
+                    </Link>  
+                </div>
+                <div>       
+                    <img src="/image/vipfind.png" alt="vip room"/>
+                    <h3>VIP ROOM</h3>
+                    <div>
+                        <Link href="/vip-room">
+                            <div className="Expand-btn2">Expand</div>
+                        </Link> 
+                    </div>  
                 </div>
                 <div>
-                    
-                        <img src="/image/vip.png" alt="vip room"/>
-                    
-                    <h1>vip</h1>
-                </div>
-                <div>
-                    <img src="/image/vvip.png" alt="vvip room"/>
-                    <h1>vvip</h1>
+                    <img src="/image/vvipfind.png" alt="vvip room"/>
+                    <h3>VVIP ROOM</h3>
+                    <div>
+                        <Link href="/vvip-room">
+                            <div className="Expand-btn3">Expand</div>
+                        </Link>  
+                    </div>
                 </div>
             </div>
             
