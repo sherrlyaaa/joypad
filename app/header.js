@@ -1,5 +1,8 @@
+"use client";
+import React, { useState, useRef, useEffect } from "react";
 import "../styles/header.css";
 import Link from 'next/link';
+
 
 const Header = () => {
     return (

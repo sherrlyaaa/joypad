@@ -28,8 +28,10 @@ export default function SignupPage() {
         <h1>Create Your Account</h1>
 
         <form className="signup-form">
-          <input type="text" className="form-input" placeholder="Full Name" />
           <input type="email" className="form-input" placeholder="Email Address" />
+          <input type="text" className="form-input" placeholder="Phone Number" />
+          <input type="text" className="form-input" placeholder="First Name" />
+          <input type="text" className="form-input" placeholder="Last Name" />
           
           <div className="password-container">
             <input 
