@@ -21,12 +21,12 @@ const Header = () => {
         <nav>
           <ul>
             <li>
-              <a href="/" id="home" className="nav-link active">
+              <a href="/homepage" id="home" className="nav-link active">
                 Home
               </a>
             </li>
             <li>
-              <a href="#" id="myReservation" className="nav-link">
+              <a href="/my-reservation" id="myReservation" className="nav-link">
                 My Reservation
               </a>
             </li>
@@ -59,9 +59,8 @@ const Header = () => {
                   dropdownVisible ? "visible" : ""
                 }`}
               >
-                <a href="#">Option 1</a>
-                <a href="#">Option 2</a>
-                <a href="#">Option 3</a>
+                <a href="/notification">Notification</a>
+                <a href="/">Log Out</a>
               </div>
             </li>
           </div>
