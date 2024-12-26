@@ -164,6 +164,7 @@ const Review = () => {
   return (
     <div className="min-h-screen bg-purple-50">
       <Header />
+      <div className='rating-container'>
       <main className="max-w-4xl mx-auto p-6">
         <section className="rating-card mb-8">
           <h2 className="rating-title">Rating</h2>
@@ -209,6 +210,7 @@ const Review = () => {
         </button>
         {showReviewModal && <ReviewModal />}
       </main>
+      </div>
       <Footer />
     </div>
   );

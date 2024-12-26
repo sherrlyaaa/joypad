@@ -110,7 +110,7 @@ nav ul li a {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 100px;
   background: #e5d3eb;
   width: 95%;
   max-height: 70px;
