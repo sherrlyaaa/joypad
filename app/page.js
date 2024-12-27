@@ -112,56 +112,61 @@ export default function HomePage() {
       </section>
 
       {/* Bagian Reviews */}
-      <section id="ratingbox" className="rating">
-        <div className="rating">
-          <h2>Rating</h2>
-          <div className="score">
-            <span className="nilai-rating">4.5</span>
-            <span className="stars">★</span>
-            <span className="rating">Based on 150 reviews</span>
+   <section id="ratingbox" className="rating">
+        <div className="rating-left">
+          <div className="rating-tittle">Rating</div>
+          <div className="rating-score">
+            <span className="score-number">4.5</span>
+            <span className="score-stars">★</span>
+          </div>
+          <div className="rating-reviews">Based on 150 reviews</div>
+          <div className="rating-breakdown">
+            {[5, 4, 3, 2, 1].map((stars, index) => (
+              <div key={index} className="breakdown-row">
+                <span className="stars-row">
+                  {"★".repeat(stars).padEnd(5, "☆")}
+                </span>
+                <div className="bar-container">
+                  <div
+                    className="bar-fill"
+                    style={{ width: `${[93, 42, 14, 1, 0][index]}%` }}
+                  ></div>
+                </div>
+                <span className="review-count-row">
+                  {[93, 42, 14, 1, 0][index]}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
-        <div className="review">
-          <div className="profile-review">
-            <img
-              src="/image/review1.png"
-              alt="foto"
-              className="profile-review"
-            />
-            <span className="username-review">Fadilahrtk</span>
-            <span className="stars-review">★★★★★</span>
-          </div>
-          <p>
-          <strong> Excellent booking experience! </strong>
-          </p>
-          <p>
-          This game house reservation platform is very easy to use and
-          responsive. Fast booking process, intuitive interface, and a wide
-          selection of games. The payment system is secure, and customer
-          support is very helpful. I can immediately choose the game room
-          according to my wishes without any hassle.
-          </p>
-        </div>
-
-        <div className="review">
-          <div className="profile-review">
-            <img
-              src="/image/review2.jpg"
-              alt="foto"
-              className="profile-review"
-            />
-            <span className="username-review">Xavierzh</span>
-            <span className="stars-review">★★★★★</span>
-          </div>
-          <p>
-          <strong>Excellent Experience, Highly Recommend!</strong>
-          </p>
-          <p>
-            Highly recommend this place to anyone looking for a fun and
-            hassle-free gaming experience! I had an amazing time at the gaming
-            venue! The setup was flawless, with all the equipment working
-            perfectly, and the atmosphere was vibrant and exciting.
-          </p>
+        <div className="review-section">
+          {[{
+            username: "Fadilahrtk",
+            stars: 5,
+            image: "/image/review1.png",
+            title: "Excellent booking experience!",
+            text: "This game house reservation platform is very easy to use and responsive. Fast booking process, intuitive interface, and a wide selection of games. The payment system is secure, and customer support is very helpful. I can immediately choose the game room according to my wishes without any hassle."
+          }, {
+            username: "Xavierzh",
+            stars: 5,
+            image: "/image/review2.jpg",
+            title: "Excellent Experience, Highly Recommend!",
+            text: "Highly recommend this place to anyone looking for a fun and hassle-free gaming experience! I had an amazing time at the gaming venue! The setup was flawless, with all the equipment working perfectly, and the atmosphere was vibrant and exciting."
+          }].map((review, index) => (
+            <div key={index} className="review">
+              <div className="profile-review">
+                <img
+                  src={review.image}
+                  alt="foto"
+                  className="profile-review"
+                />
+                <span className="username-review">{review.username}</span>
+                <span className="stars-review">{"★".repeat(review.stars)}</span>
+              </div>
+              <p><strong>{review.title}</strong></p>
+              <p>{review.text}</p>
+            </div>
+          ))}
         </div>
       </section>
 

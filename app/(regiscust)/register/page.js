@@ -1,9 +1,6 @@
 "use client"; // Menandai file ini sebagai komponen klien
 
 import React, { useState } from "react";
-import Header from "../../header";
-import Footer  from "../../footer";
-import Link from 'next/link';
 import "../../../styles/register.css"
 
 export default function SignupPage() {
