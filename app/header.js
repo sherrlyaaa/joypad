@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import "../styles/header.css";
 import Link from "next/link";
+
 
 const Header = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
