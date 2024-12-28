@@ -1,25 +1,8 @@
-"use client";
-import React, { useState } from "react";
-import "../styles/globals.css";
-import Header from "./header";
-import Footer from "./footer";
-import Link from "next/link";
-import Calendar from "react-calendar";
-import "react-calendar";
+import { redirect } from "next/navigation";
 
-// Fungsi untuk generate opsi waktu
-const generateTimeOptions = () => {
-  const times = [];
-  for (let hour = 10; hour <= 19; hour++) {
-    const time = `${hour}:00`;
-    times.push(
-      <option key={time} value={time}>
-        {time}
-      </option>
-    );
-  }
-  return times;
-};
+export default function RootPage() {
+  // Redirect ke halaman login
+  redirect("/login");
 
 export default function HomePage() {
   const [selectedDate, setSelectedDate] = useState(null);
