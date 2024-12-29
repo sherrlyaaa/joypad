@@ -43,11 +43,6 @@
   .min-h-screen {
     font-family: 'Poppins', sans-serif;
     width: 100%;
-    background: linear-gradient(
-      180deg,
-      rgba(169, 142, 178, 0.8) 64.49999809265137%,
-      rgba(201, 141, 168, 0.68) 100%
-    );
     background-attachment: fixed;
     background-size: 2000;
     background-repeat: no-repeat;
@@ -535,3 +530,8 @@
   font-weight: 250px;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}

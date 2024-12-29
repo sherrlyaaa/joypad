@@ -101,7 +101,7 @@ const Review = () => {
     <div className="flex justify-between items-start mb-3">
       <div className="flex items-center gap-3">
         <img
-          src={'image/user.png'}
+          src={'/image/user.png'}
           alt={`${review.author}'s avatar`}
           className="w-8 h-8 rounded-full"
           style={{ 
@@ -126,137 +126,84 @@ const Review = () => {
   </div>
   );
 
-  const ReviewModal = () => {
-  const [modalRating, setModalRating] = useState(0);
-  const [modalReviewTitle, setModalReviewTitle] = useState("");
-  const [modalReviewContent, setModalReviewContent] = useState("");
-
-  const isSubmitDisabled = modalRating === 0;
-    // Debounced input handlers
-    const handleReviewTitleChange = debounce((value) => {
-      setReviewTitle(value);
-    }, 300);
-  
-    const handleReviewContentChange = debounce((value) => {
-      setReviewContent(value);
-    }, 300);
-  
-    // Cek apakah rating sudah dipilih, dan judul atau isi ulasan bisa kosong
-    // const isSubmitDisabled = rating === 0 ;
-  
-    return (
-      showReviewModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-2xl p-6 w-[500px] max-w-[90%]">
-        <h2 className="text-xl font-semibold mb-4">Write a review</h2>
-
-        <div className="mb-4">
-          <div className="flex gap-2 mb-4">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <button
-                key={star}
-                onClick={() => setModalRating(star)}
-                className="text-2xl text-yellow-400"
-              >
-                {star <= modalRating ? "★" : "☆"}
-              </button>
-            ))}
-          </div>
-          <div className="mb-4">
-            <input
-              type="text"
-              placeholder="Review Title"
-              value={modalReviewTitle}
-              onChange={(e) => setModalReviewTitle(e.target.value)}
-              className="w-full p-2 border rounded-[10px] mb-2"
-            />
-          </div>
-          <textarea
-            placeholder="Tell us about your experience..."
-            value={modalReviewContent}
-            onChange={(e) => setModalReviewContent(e.target.value)}
-            className="w-full p-2 border rounded-[10px] h-32"
-          />
-        </div>
-
-        <div className="flex justify-end gap-2">
-          <button
-            onClick={() => setShowReviewModal(false)}
-            className="px-4 py-2 rounded-[20px] bg-gray-200"
-          >
-            Cancel
-          </button>
-
-          <button
-            onClick={() => {
-              addReview({
-                author: "New User",
-                rating: modalRating,
-                title: modalReviewTitle,
-                content: modalReviewContent,
-              });
-              setShowReviewModal(false);
-            }}
-            disabled={isSubmitDisabled}
-            className={`px-4 py-2 rounded-[20px] text-white ${
-              isSubmitDisabled ? "bg-gray-300 cursor-not-allowed" : "bg-pink-400"
-            }`}
-          >
-            Submit review
-            </button>
-            </div>
-          </div>
-        </div>
-      )
-    );
-  };
-
   return (
-    <div className="min-h-screen bg-purple-50">
-      <Header_admin />
-      <div className='rating-container'>
-      <main className="max-w-4xl mx-auto p-6">
-        <section className="rating-card mb-8">
-          <h2 className="rating-title">Rating</h2>
-          <div className="rating-summary">
-            <div className="rating-score">
-              <span className="score">{calculateAverageRating()}</span>
-              <span className="star-large">★</span>
-            </div>
-            <p className="review-count">
-              Based on {ratings.reduce((acc, curr) => acc + curr.count, 0)} reviews
-            </p>
+    <div className="min-h-screen font-['Poppins'] w-full bg-fixed bg-[length:2000px] bg-no-repeat bg-center max-h-[500vh]">
+      <Header_admin/>
+      <div className="max-w-4xl mx-auto p-6 my-14 mt-[150px]">
+        {/* Rating Summary Card */}
+        <div className="bg-[#EBDFEF] rounded-[24px] p-8 mb-6">
+          <h2 className="text-gray-600 text-2xl font-medium mb-6">Rating</h2>
+          
+          <div className="flex items-baseline gap-3 mb-4">
+            <span className="text-[3.5rem] font-medium text-gray-600">4.5</span>
+            <span className="text-yellow-400 text-2xl">★</span>
           </div>
-          <div className="rating-bars">
+          
+          <p className="text-gray-500 text-sm mb-8">Based on 150 reviews</p>
+
+          <div className="flex flex-col gap-4">
             {ratings.map((rating) => (
-              <div key={rating.stars} className="rating-bar-row">
-                <div className="star-container">
-                  {renderStars(rating.stars)}
+              <div key={rating.stars} className="flex items-center gap-3">
+                <div className="flex-none w-[120px]">
+                  {[...Array(5)].map((_, index) => (
+                    <span 
+                      key={index} 
+                      className={`text-lg ${index < rating.stars ? 'text-yellow-400' : 'text-yellow-400'}`}
+                    >
+                      {index < rating.stars ? "★" : "☆"}
+                    </span>
+                  ))}
                 </div>
-                <div className="progress-bar">
-                  <div
-                    className="progress-fill"
+                <div className="flex-grow h-2.5 bg-gray-100 rounded-full overflow-hidden">
+                  <div 
+                    className="h-full bg-pink-300 rounded-full transition-all duration-300"
                     style={{ width: `${(rating.count / 150) * 100}%` }}
                   />
                 </div>
-                <span className="rating-count">{rating.count}</span>
+                <span className="flex-none w-8 text-right text-gray-500 text-sm">
+                  {rating.count}
+                </span>
               </div>
             ))}
           </div>
-        </section>
+        </div>
 
-        <section>
-          {reviews.map((review, index) => (
-            <ReviewCard key={review.id} review={review} index={index} />
-          ))}
-        </section>
-
-    
-        {showReviewModal && <ReviewModal />}
-      </main>
+      {/* Review cards */}
+      <div className="space-y-4">
+        {reviews.map((review) => (
+          <div 
+            key={review.id}
+            className="bg-[#EBDFEF] rounded-[24px] p-8"
+          >
+            <div className="flex justify-between items-start mb-4">
+              <div className="flex items-center gap-3">
+                <img
+                  src="/image/user.png"
+                  alt={review.author}
+                  className="w-10 h-10 rounded-full"
+                />
+                <div>
+                  <h3 className="font-[500] text-[#374151]">{review.author}</h3>
+                  <div className="text-[#fbbf24] text-sm">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i}>
+                        {i < review.rating ? "★" : "☆"}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <span className="text-[#6b7280] text-sm">{review.date}</span>
+            </div>
+            <h4 className="font-[500] text-[#374151] mb-2">{review.title}</h4>
+            <p className="text-[#4b5563] leading-[1.625]">{review.content}</p>
+          </div>
+        ))}
       </div>
     </div>
-  );
-};
+  </div>
+);
+}
+
 
 export default Review;
