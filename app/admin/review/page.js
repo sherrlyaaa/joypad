@@ -1,9 +1,7 @@
 'use client'
 import React, { useState } from 'react';
-import debounce from 'lodash/debounce';
 import "../../../styles/review.css";
-import Header from "../../header.js";
-import Footer from "../../footer.js";
+import Header_admin from '@/app/header_admin';
 
 const Review = () => {
   const [showReviewModal, setShowReviewModal] = useState(false);
@@ -215,57 +213,36 @@ const Review = () => {
 
   return (
     <div className="min-h-screen bg-purple-50">
-      <Header />
+      <Header_admin />
       <div className='rating-container'>
-        <main className="max-w-4xl mx-auto p-6">
-          <section className="rating-card mb-8">
-            <h2 className="rating-title">Rating</h2>
-            <div className="rating-summary">
-              <div className="rating-score">
-                <span className="score">{calculateAverageRating()}</span>
-                <span className="star-large">★</span>
-              </div>
-              <p className="review-count">
-                Based on {ratings.reduce((acc, curr) => acc + curr.count, 0)} reviews
-              </p>
+      <main className="max-w-4xl mx-auto p-6">
+        <section className="rating-card mb-8">
+          <h2 className="rating-title">Rating</h2>
+          <div className="rating-summary">
+            <div className="rating-score">
+              <span className="score">{calculateAverageRating()}</span>
+              <span className="star-large">★</span>
             </div>
-            <div className="rating-bars">
-              {ratings.map((rating) => (
-                <div key={rating.stars} className="rating-bar-row">
-                  <div className="star-container">
-                    {renderStars(rating.stars)}
-                  </div>
-                  <div className="progress-bar">
-                    <div className="progress-fill" style={{ width: `${(rating.count / 150) * 100}%` }} />
-                    </div>
-                    <span className="rating-count">{rating.count}</span>
-                  </div>,
-                  <p className="review-count">
-                    Based on {ratings.reduce((acc, curr) => acc + curr.count, 0)} reviews
-                  </p>))}
-            </div>
-            <div className="rating-bars">
-              {ratings.map((rating) => (
-                <div key={rating.stars} className="rating-bar-row">
-                  <div className="star-container">
-                    {renderStars(rating.stars)}
-                  </div>
-                  <div className="progress-bar">
-                    <div
-                      className="progress-fill"
-                      style={{ width: `${(rating.count / 150) * 100}%` }} />
-                  </div>
-                  <span className="rating-count">{rating.count}</span>
+            <p className="review-count">
+              Based on {ratings.reduce((acc, curr) => acc + curr.count, 0)} reviews
+            </p>
+          </div>
+          <div className="rating-bars">
+            {ratings.map((rating) => (
+              <div key={rating.stars} className="rating-bar-row">
+                <div className="star-container">
+                  {renderStars(rating.stars)}
                 </div>
-              ))}
-            </div>
-          </section>
-
-          <section>
-            {reviews.map((review, index) => (
-              <ReviewCard key={review.id} review={review} index={index} />
+                <div className="progress-bar">
+                  <div
+                    className="progress-fill"
+                    style={{ width: `${(rating.count / 150) * 100}%` }}
+                  />
+                </div>
+                <span className="rating-count">{rating.count}</span>
+              </div>
             ))}
-
+          </div>
         </section>
 
         <section>
@@ -274,13 +251,10 @@ const Review = () => {
           ))}
         </section>
 
-        <button onClick={() => setShowReviewModal(true)} className="button">
-          <span className="text-xl">✎</span>
-          Write a review
-        </button>
+    
         {showReviewModal && <ReviewModal />}
       </main>
-    </div><Footer />
+      </div>
     </div>
   );
 };

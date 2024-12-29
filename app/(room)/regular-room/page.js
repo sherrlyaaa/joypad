@@ -128,8 +128,7 @@ const RegularRoom = () => {
                         </ul>
                     </nav>
                 </div>
-                {renderContent()}
-            </div>
+                {renderContent()}            </div>
             <Footer/>
         </div>
     );
